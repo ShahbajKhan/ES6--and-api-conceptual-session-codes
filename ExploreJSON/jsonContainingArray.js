@@ -31,17 +31,20 @@ const person = {
 
   // [{.......},{........}]
 
-
+// Destructure
   const {found, message, result}= person;
   console.log(result)
 // without destructuring
   // person.result.forEach(singlePerson={})
 
-  // destructure
+  // display found results
 document.getElementById("results-found").innerText = `Found ${found} persons  ${message}`
+// loop through each object inside result
   result.forEach((singlePerson, index)=>{
     console.log(singlePerson);
+    // capture the container
     const cardContainer =document.getElementById("card-container");
+    // Create the div where you want  to keep the data.
     const personCard = document.createElement("div");
     personCard.classList.add("col");
     personCard.innerHTML =`
@@ -54,6 +57,7 @@ document.getElementById("results-found").innerText = `Found ${found} persons  ${
         </div>
     </div>
     `
+    // Append the div inside the container
     cardContainer.appendChild(personCard);
   })
 
